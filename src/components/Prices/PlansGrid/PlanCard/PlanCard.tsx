@@ -17,7 +17,7 @@ const PlanCard = ({ index, plan }: Props) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
       viewport={{ once: true }}
-      className={`border bg-transparent rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ring ${ringColor}`}
+      className={`border h-full flex flex-col rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ring ${ringColor}`}
     >
       <div className="flex flex-col items-center mb-6">
         {Icon}
@@ -37,7 +37,7 @@ const PlanCard = ({ index, plan }: Props) => {
         ))}
         <li className="italic text-muted-foreground">And more...</li>
       </ul>
-      <Button className={`w-full ${bgColor} font-semibold text-lg hover:${bgColor}`}>
+      <Button className={`w-full ${bgColor} font-semibold mt-auto text-lg hover:${bgColor}`}>
         Get Quote
       </Button>
     </motion.div>

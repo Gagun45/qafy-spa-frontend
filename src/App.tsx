@@ -7,10 +7,12 @@ import Pricing from "./components/Prices/Prices";
 import Services from "./components/Services/Services";
 import Testimonials from "./components/Testimonials/Testimonials";
 import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
+import GincoreWidget from "./components/Widget/Widget";
 
 function App() {
   return (
     <>
+      <GincoreWidget /> {/* hidden */}
       <Navbar />
       <Hero />
       <Services />

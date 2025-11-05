@@ -1,6 +1,7 @@
-import { Button, buttonVariants } from "@/components/ui/button";
+import SmoothLink from "@/components/SmoothLink/SmoothLink";
+import { buttonVariants } from "@/components/ui/button";
+import WidgetTrigger from "@/components/Widget/WidgetTrigger";
 import { motion } from "framer-motion";
-import { Link } from "react-scroll";
 
 const CTA = () => {
   return (
@@ -10,20 +11,14 @@ const CTA = () => {
       transition={{ delay: 0.5 }}
       className="flex flex-col sm:flex-row gap-4 items-center justify-center"
     >
-      <Button className="bg-primary hover:bg-primary/95 ctaBtn">
-        Check Repair Status
-      </Button>
+      <WidgetTrigger className="bg-primary hover:bg-primary/95 ctaBtn" />
 
-      <Link
+      <SmoothLink
         to="contact"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={500}
         className={`${buttonVariants()} bg-foreground! text-background! ctaBtn`}
       >
         Get a Free Quote
-      </Link>
+      </SmoothLink>
     </motion.div>
   );
 };
