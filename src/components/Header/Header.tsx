@@ -1,15 +1,24 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 import { scrollSpy } from "react-scroll";
 import ThemeToggle from "../Theme/ThemeToggle";
-import SmoothLink from "../SmoothLink/SmoothLink";
-import { buttonVariants } from "../ui/button";
-import { LINKS } from "@/lib/constants";
+
+import Logo from "./Logo/Logo";
+import DesktopNav from "./DesktopNav/DesktopNav";
+import MobileMenuToggle from "./MobileMenuToggle/MobileMenuToggle";
+import MobileNav from "./MobileNav/MobileNav";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
 
   // add shadow when scrolling
   useEffect(() => {
@@ -31,77 +40,14 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6 w-full">
-        {/* Logo / Brand */}
         <div className="flex items-center gap-2">
-          <SmoothLink to="home" spy={false} className="font-bold text-2xl">
-            Qafy Mobile
-          </SmoothLink>
+          <Logo />
           <ThemeToggle />
         </div>
-
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex space-x-8">
-          {LINKS.map((link) => (
-            <SmoothLink to={link.href} key={link.href}>
-              {link.label}
-            </SmoothLink>
-          ))}
-        </nav>
-
-        {/* CTA button (right corner) */}
-        <SmoothLink
-          to="contact"
-          spy={false}
-          className={`${buttonVariants()} hidden! lg:flex! bg-foreground! text-background! font-semibold`}
-        >
-          Get Quote
-        </SmoothLink>
-
-        {/* Mobile menu toggle */}
-        <button
-          onClick={() => setMenuOpen((p) => !p)}
-          className="lg:hidden cursor-pointer"
-        >
-          {menuOpen ? <X size={26} /> : <Menu size={26} />}
-        </button>
+        <DesktopNav />
+        <MobileMenuToggle menuOpen={menuOpen} toggleMenu={toggleMenu} />
       </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.nav
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15 }}
-            className="lg:hidden bg-muted border-t border-b border-foreground backdrop-blur-md px-6 pb-6 absolute top-24 w-full -z-10!"
-          >
-            <ul className="flex flex-col space-y-4 tracking-wider mt-4 items-center">
-              {LINKS.map((link) => (
-                <li key={link.href}>
-                  <SmoothLink
-                    onClick={() => setMenuOpen(false)}
-                    spy={false}
-                    to={link.href}
-                  >
-                    {link.label}
-                  </SmoothLink>
-                </li>
-              ))}
-              <li>
-                <SmoothLink
-                  to="contact"
-                  spy={false}
-                  onClick={() => setMenuOpen(false)}
-                  className={`${buttonVariants()}`}
-                >
-                  Get Quote
-                </SmoothLink>
-              </li>
-            </ul>
-          </motion.nav>
-        )}
-      </AnimatePresence>
+      {menuOpen && <MobileNav closeMenu={closeMenu} />}
     </motion.header>
   );
 }
