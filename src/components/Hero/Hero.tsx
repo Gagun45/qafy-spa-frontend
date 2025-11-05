@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { FaTools } from "react-icons/fa";
-import { Link } from "react-scroll";
-import { Button, buttonVariants } from "../ui/button";
+import CTA from "./CTA/CTA";
 
 const Hero = () => {
   return (
@@ -16,8 +15,9 @@ const Hero = () => {
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 max-w-3xl"
+        className="z-10 max-w-3xl"
       >
+        {/* Icon */}
         <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -27,52 +27,21 @@ const Hero = () => {
           <FaTools className="text-5xl text-primary" />
         </motion.div>
 
-        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
+        {/* Title */}
+        <h1 className="text-4xl sm:text-6xl font-bold leading-tight mb-4">
           Fast & Reliable <br />
           <span className="text-primary">PC & Phone Repair</span>
         </h1>
 
-        <p className="text-lg md:text-xl mb-8">
+        {/* Subtitle */}
+        <p className="text-lg sm:text-xl mb-8">
           We fix all major brands — same day service available. Trusted by
           hundreds of happy customers.
         </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="flex flex-col sm:flex-row gap-4 items-center justify-center"
-        >
-          <Button className="bg-primary hover:bg-primary/95 py-6 text-lg transition-colors rounded-xl font-semibold shadow-primary/30 w-full sm:max-w-64">
-            Check Repair Status
-          </Button>
-
-          <Link
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-            className={`${buttonVariants()} bg-foreground! py-6 text-lg! text-background! transition-colors rounded-xl font-semibold w-full sm:max-w-64`}
-          >
-            Get a Free Quote
-          </Link>
-        </motion.div>
+        {/* Call to action buttons */}
+        <CTA />
       </motion.div>
-
-      {/* Decorative shapes */}
-      {/* <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 0.25, scale: 1 }}
-        transition={{ duration: 1.2, delay: 0.8 }}
-        className="absolute bottom-10 right-10 w-32 h-32 bg-primary rounded-full blur-3xl z-5"
-      />
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 0.25, scale: 1 }}
-        transition={{ duration: 1.2, delay: 1 }}
-        className="absolute top-10 left-10 w-40 h-40 bg-cyan-500 rounded-full blur-3xl"
-      /> */}
     </section>
   );
 };
