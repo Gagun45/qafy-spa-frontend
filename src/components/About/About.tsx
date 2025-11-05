@@ -3,7 +3,7 @@ import { buttonVariants } from "../ui/button";
 
 export default function About() {
   return (
-    <section id="about" className="relative py-20 px-6">
+    <section id="about" className="relative py-20 px-6 bg-linear-to-b from-background to-muted">
       {/* Subtle background gradient */}
       <motion.div
         initial={{ opacity: 0 }}

@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="why"
-      className="relative py-20 px-6"
+      className="relative py-20 px-6 bg-linear-to-b from-muted to-background"
     >
       {/* Subtle background accent */}
       <motion.div
@@ -88,7 +88,7 @@ export default function WhyChooseUs() {
         whileInView={{ opacity: 0.25, scale: 1 }}
         transition={{ duration: 1.2 }}
         viewport={{ once: true }}
-        className="absolute bottom-10 right-10 w-44 h-44 bg-blue-300 rounded-full blur-3xl"
+        className="absolute bottom-10 z-5 right-10 w-44 h-44 bg-blue-300 rounded-full blur-3xl"
       />
       <motion.div
         initial={{ opacity: 0, scale: 0 }}

@@ -28,7 +28,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-20 px-6 text-center"
+      className="relative py-20 bg-linear-to-b from-background to-muted px-6 text-center"
     >
       {/* Background accent */}
       <motion.div
@@ -97,7 +97,7 @@ export default function Services() {
         whileInView={{ opacity: 0.3, scale: 1 }}
         transition={{ duration: 1.2, delay: 0.3 }}
         viewport={{ once: true }}
-        className="absolute bottom-0 right-0 w-56 h-56 bg-primary-foreground rounded-full blur-3xl"
+        className="absolute bottom-0 z-5 right-0 w-56 h-56 bg-primary-foreground rounded-full blur-3xl"
       />
     </section>
   );
