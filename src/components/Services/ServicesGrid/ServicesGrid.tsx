@@ -5,8 +5,9 @@ import {
   FaDatabase,
 } from "react-icons/fa";
 import ServiceCard from "./ServiceCard/ServiceCard";
+import type { Service } from "@/lib/types";
 
-const services = [
+const services: Service[] = [
   {
     icon: <FaMobileAlt className="text-4xl mb-4" />,
     title: "Smartphone Repair",

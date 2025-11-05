@@ -10,3 +10,9 @@ export interface Service {
   title: string;
   desc: string;
 }
+
+export interface Feature {
+  icon: JSX.Element;
+  title: string;
+  desc: string;
+}

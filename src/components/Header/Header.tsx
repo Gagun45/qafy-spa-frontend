@@ -35,7 +35,7 @@ export default function Navbar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`sticky bg-muted top-0 left-0 w-full z-50 h-24 transition-colors  flex items-center  ${
+      className={`sticky bg-muted top-0 left-0 w-full z-50 h-24 flex items-center  ${
         (scrolled || menuOpen) &&
         "backdrop-blur-md shadow-md border-b border-foreground"
       }`}
