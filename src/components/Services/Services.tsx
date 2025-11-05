@@ -3,22 +3,22 @@ import { FaMobileAlt, FaLaptop, FaBatteryHalf, FaDatabase } from "react-icons/fa
 
 const services = [
   {
-    icon: <FaMobileAlt className="text-4xl text-primary mb-4" />,
+    icon: <FaMobileAlt className="text-4xl mb-4" />,
     title: "Smartphone Repair",
     desc: "Screens, cameras, charging ports, and more. We fix all major brands.",
   },
   {
-    icon: <FaLaptop className="text-4xl text-primary mb-4" />,
+    icon: <FaLaptop className="text-4xl mb-4" />,
     title: "Laptop & PC Repair",
     desc: "Hardware and software diagnostics, upgrades, and cleaning.",
   },
   {
-    icon: <FaBatteryHalf className="text-4xl text-primary mb-4" />,
+    icon: <FaBatteryHalf className="text-4xl mb-4" />,
     title: "Battery Replacement",
     desc: "Fast and reliable replacements with high-quality batteries.",
   },
   {
-    icon: <FaDatabase className="text-4xl text-primary mb-4" />,
+    icon: <FaDatabase className="text-4xl mb-4" />,
     title: "Data Recovery",
     desc: "Recover your lost data safely and securely from any device.",
   },
@@ -55,7 +55,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-muted-foreground max-w-2xl mx-auto mb-12"
+          className="max-w-2xl mx-auto mb-12"
         >
           Whether it's a cracked screen, slow laptop, or battery issue — we’ll
           bring your device back to life quickly and professionally.
@@ -70,9 +70,9 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="bg-muted rounded-2xl p-8 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all border border-accent"
+              className="bg-accent rounded-2xl p-8 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all ring ring-muted-foreground/25"
             >
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col text-primary items-center">
                 {service.icon}
                 <h3 className="text-xl font-semibold mb-2">
                   {service.title}
