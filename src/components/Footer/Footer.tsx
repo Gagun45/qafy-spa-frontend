@@ -3,17 +3,8 @@ import { Facebook, Instagram, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative py-12 px-6 bg-accent">
-      {/* background glow */}
-      {/* <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.15 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 aspect-square h-full bg-primary rounded-full blur-3xl"
-      /> */}
-
-      <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-3 gap-10 text-center md:text-left">
+    <footer className="py-12 px-6 bg-accent">
+      <div className="z-10 max-w-6xl mx-auto grid md:grid-cols-3 gap-10 text-center md:text-left">
         {/* Column 1: Brand */}
         <div>
           <h3 className="text-2xl font-bold mb-3">Qafy Mobile</h3>

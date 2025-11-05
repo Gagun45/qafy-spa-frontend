@@ -19,7 +19,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-20 px-6 bg-linear-to-b from-muted to-background">
+    <section id="contact" className="relative py-20 px-6 bg-muted">
       {/* Glow background */}
 
       <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-12 z-10">

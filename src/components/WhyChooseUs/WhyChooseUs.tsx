@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="why"
-      className="relative py-20 px-6 bg-linear-to-b from-muted to-background"
+      className="relative py-20 px-6"
     >
       {/* Subtle background accent */}
       <motion.div

@@ -43,7 +43,10 @@ const pricingPlans = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-20 px-6 bg-linear-to-b from-background to-muted relative">
+    <section
+      id="pricing"
+      className="py-20 px-6 relative"
+    >
       <div className="max-w-6xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -74,7 +77,7 @@ export default function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: i * 0.2 }}
             viewport={{ once: true }}
-            className={`border bg-transparent rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
+            className={`border bg-transparent rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ring ring-${plan.accent}`}
           >
             <div className="flex flex-col items-center mb-6">
               <plan.icon className={`w-12 h-12 text-${plan.accent}-500 mb-4`} />

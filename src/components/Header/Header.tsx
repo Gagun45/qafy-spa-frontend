@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Link, scrollSpy } from "react-scroll";
+import { scrollSpy } from "react-scroll";
 import ThemeToggle from "../Theme/ThemeToggle";
+import SmoothLink from "../SmoothLink/SmoothLink";
 
 const navLinks = [
   { href: "home", label: "Home" },
@@ -32,10 +33,8 @@ export default function Navbar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all ${
-        scrolled
-          ? "bg-accent backdrop-blur-md shadow-md"
-          : "bg-transparent"
+      className={`sticky bg-muted top-0 left-0 w-full z-50 transition-all ${
+        scrolled && "backdrop-blur-md shadow-md"
       }`}
     >
       <ThemeToggle />
@@ -48,18 +47,9 @@ export default function Navbar() {
         {/* Desktop nav */}
         <nav className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              spy={true}
-              smooth={true}
-              offset={-80} // adjust for sticky navbar
-              duration={500}
-              activeClass="active-link"
-              className="font-medium transition-all cursor-pointer hover:underline underline-offset-2 px-2 py-1"
-            >
+            <SmoothLink to={link.href} key={link.href}>
               {link.label}
-            </Link>
+            </SmoothLink>
           ))}
         </nav>
 

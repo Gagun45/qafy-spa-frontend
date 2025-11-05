@@ -3,14 +3,8 @@ import { buttonVariants } from "../ui/button";
 
 export default function About() {
   return (
-    <section id="about" className="relative py-20 px-6 bg-linear-to-b from-background to-muted">
+    <section id="about" className="relative py-20 px-6">
       {/* Subtle background gradient */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.2 }}
-        transition={{ duration: 1 }}
-        className="absolute inset-0"
-      />
 
       <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Image */}

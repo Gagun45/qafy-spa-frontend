@@ -28,7 +28,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative py-20 bg-linear-to-b from-background to-muted px-6 text-center"
+      className="relative py-20 px-6 text-center"
     >
       {/* Background accent */}
       <motion.div
