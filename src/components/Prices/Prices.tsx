@@ -1,7 +1,20 @@
 import { motion } from "framer-motion";
 import { Wrench, Smartphone, Laptop } from "lucide-react";
+import { Button } from "../ui/button";
 
 const pricingPlans = [
+  {
+    title: "Diagnostics",
+    icon: Wrench,
+    price: "Free",
+    features: [
+      "Full device inspection",
+      "Problem report",
+      "Repair quote",
+      "No obligation to repair",
+    ],
+    accent: "green-500",
+  },
   {
     title: "Phone Repair",
     icon: Smartphone,
@@ -12,7 +25,7 @@ const pricingPlans = [
       "Charging port fix",
       "Water damage recovery",
     ],
-    accent: "blue",
+    accent: "primary",
   },
   {
     title: "Laptop Repair",
@@ -24,25 +37,13 @@ const pricingPlans = [
       "Motherboard repair",
       "System reinstall",
     ],
-    accent: "cyan",
-  },
-  {
-    title: "Diagnostics",
-    icon: Wrench,
-    price: "Free",
-    features: [
-      "Full device inspection",
-      "Problem report",
-      "Repair quote",
-      "No obligation to repair",
-    ],
-    accent: "green",
+    accent: "chart-3",
   },
 ];
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-20 px-6 bg-white text-gray-900">
+    <section id="pricing" className="py-20 px-6">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -58,13 +59,14 @@ export default function Pricing() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 max-w-2xl mx-auto"
+          className="text-muted-foreground max-w-2xl mx-auto"
         >
-          We keep things simple — no hidden fees, no surprises. Just expert repair service you can trust.
+          We keep things simple — no hidden fees, no surprises. Just expert
+          repair service you can trust.
         </motion.p>
       </div>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-4">
         {pricingPlans.map((plan, i) => (
           <motion.div
             key={i}
@@ -72,32 +74,33 @@ export default function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: i * 0.2 }}
             viewport={{ once: true }}
-            className={`border rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
+            className={`border bg-accent rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
           >
             <div className="flex flex-col items-center mb-6">
-              <plan.icon
-                className={`w-12 h-12 text-${plan.accent}-500 mb-4`}
-              />
+              <plan.icon className={`w-12 h-12 text-${plan.accent}-500 mb-4`} />
               <h3 className="text-xl font-semibold mb-1">{plan.title}</h3>
-              <p className={`text-${plan.accent}-500 font-bold text-2xl`}>
+              <p className={`text-${plan.accent} font-bold text-2xl`}>
                 {plan.price}
               </p>
             </div>
 
             <ul className="text-left space-y-3 mb-8">
               {plan.features.map((feature, idx) => (
-                <li key={idx} className="flex items-center gap-2 text-gray-700">
+                <li
+                  key={idx}
+                  className="flex items-center gap-2 text-muted-foreground"
+                >
                   <span className="text-green-500">✔</span>
                   {feature}
                 </li>
               ))}
             </ul>
 
-            <button
-              className={`w-full py-3 rounded-xl bg-${plan.accent}-500 hover:bg-${plan.accent}-600 text-white font-semibold transition-colors`}
+            <Button
+              className={`w-full bg-${plan.accent} hover:bg-${plan.accent}`}
             >
               Get Quote
-            </button>
+            </Button>
           </motion.div>
         ))}
       </div>
