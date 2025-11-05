@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FaTools } from "react-icons/fa";
 import { Link } from "react-scroll";
+import { Button, buttonVariants } from "../ui/button";
 
 const Hero = () => {
   return (
@@ -10,7 +11,6 @@ const Hero = () => {
       min-h-screen bg-linear-to-b from-primary to-background
       text-center px-6"
     >
-
       {/* Content */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -32,7 +32,7 @@ const Hero = () => {
           <span className="text-primary">PC & Phone Repair</span>
         </h1>
 
-        <p className="text-gray-300 text-lg md:text-xl mb-8">
+        <p className="text-lg md:text-xl mb-8">
           We fix all major brands — same day service available. Trusted by
           hundreds of happy customers.
         </p>
@@ -41,11 +41,11 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-4 items-center justify-center"
         >
-          <button className="bg-blue-500 hover:bg-blue-600 transition-colors px-8 py-3 rounded-xl font-semibold shadow-lg shadow-blue-500/30">
+          <Button className="bg-accent hover:bg-accent/95 transition-colors rounded-xl font-semibold shadow-primary/30 w-full sm:max-w-64">
             Check Repair Status
-          </button>
+          </Button>
 
           <Link
             to="contact"
@@ -53,7 +53,7 @@ const Hero = () => {
             smooth={true}
             offset={50}
             duration={500}
-            className="border border-gray-400 hover:border-blue-400 hover:text-blue-400 transition-colors px-8 py-3 rounded-xl font-semibold"
+            className={`${buttonVariants()} bg-primary! hover:bg-primary/95! transition-colors rounded-xl font-semibold w-full sm:max-w-64`}
           >
             Get a Free Quote
           </Link>

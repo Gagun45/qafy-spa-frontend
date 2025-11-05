@@ -34,15 +34,15 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 w-full z-50 transition-all ${
         scrolled
-          ? "bg-gray-900/90 backdrop-blur-md shadow-md"
+          ? "bg-primary backdrop-blur-md shadow-md"
           : "bg-transparent"
       }`}
     >
       <ThemeToggle />
       <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
         {/* Logo / Brand */}
-        <a href="#home" className="text-white font-bold text-2xl">
-          Qafy<span className="text-blue-400">Mobile</span>
+        <a href="#home" className="font-bold text-2xl">
+          Qafy Mobile
         </a>
 
         {/* Desktop nav */}
@@ -66,7 +66,7 @@ export default function Navbar() {
         {/* CTA button (right corner) */}
         <a
           href="#contact"
-          className="hidden md:inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-5 py-2 rounded-xl transition-colors"
+          className="hidden md:inline-block bg-accent text-white font-semibold px-5 py-2 rounded-xl transition-colors"
         >
           Get Quote
         </a>
