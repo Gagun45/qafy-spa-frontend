@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { scrollSpy } from "react-scroll";
 import ThemeToggle from "../Theme/ThemeToggle";
 import SmoothLink from "../SmoothLink/SmoothLink";
+import { buttonVariants } from "../ui/button";
 
 const navLinks = [
   { href: "home", label: "Home" },
@@ -33,19 +34,21 @@ export default function Navbar() {
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`sticky bg-muted top-0 left-0 w-full z-50 transition-all ${
+      className={`sticky bg-muted top-0 left-0 w-full z-50 h-24 flex items-center  ${
         scrolled && "backdrop-blur-md shadow-md"
       }`}
     >
-      <ThemeToggle />
-      <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
+      <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6 w-full">
         {/* Logo / Brand */}
-        <a href="#home" className="font-bold text-2xl">
-          Qafy Mobile
-        </a>
+        <div className="flex items-center gap-2">
+          <SmoothLink to="home" spy={false} className="font-bold text-2xl">
+            Qafy Mobile
+          </SmoothLink>
+          <ThemeToggle />
+        </div>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden lg:flex space-x-8">
           {navLinks.map((link) => (
             <SmoothLink to={link.href} key={link.href}>
               {link.label}
@@ -54,17 +57,18 @@ export default function Navbar() {
         </nav>
 
         {/* CTA button (right corner) */}
-        <a
-          href="#contact"
-          className="hidden md:inline-block bg-foreground text-background font-semibold px-5 py-2 rounded-xl transition-colors"
+        <SmoothLink
+          to="contact"
+          spy={false}
+          className={`${buttonVariants()} hidden! lg:flex! bg-foreground! text-background! font-semibold`}
         >
           Get Quote
-        </a>
+        </SmoothLink>
 
         {/* Mobile menu toggle */}
         <button
           onClick={() => setMenuOpen((p) => !p)}
-          className="md:hidden text-gray-200"
+          className="lg:hidden cursor-pointer"
         >
           {menuOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
@@ -74,32 +78,33 @@ export default function Navbar() {
       <AnimatePresence>
         {menuOpen && (
           <motion.nav
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-gray-900/95 backdrop-blur-md px-6 pb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15 }}
+            className="lg:hidden bg-muted border-t border-b border-foreground backdrop-blur-md px-6 pb-6 absolute top-24 w-full -z-10!"
           >
-            <ul className="flex flex-col space-y-4 mt-4 text-gray-200">
+            <ul className="flex flex-col space-y-4 tracking-wider mt-4 items-center">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
+                  <SmoothLink
                     onClick={() => setMenuOpen(false)}
-                    className="block w-full hover:text-blue-400 transition-colors"
+                    spy={false}
+                    to={link.href}
                   >
                     {link.label}
-                  </a>
+                  </SmoothLink>
                 </li>
               ))}
               <li>
-                <a
-                  href="#contact"
+                <SmoothLink
+                  to="contact"
+                  spy={false}
                   onClick={() => setMenuOpen(false)}
-                  className="inline-block w-full bg-blue-500 hover:bg-blue-600 text-center text-white py-2 rounded-xl font-semibold transition-colors"
+                  className={`${buttonVariants()}`}
                 >
                   Get Quote
-                </a>
+                </SmoothLink>
               </li>
             </ul>
           </motion.nav>

@@ -5,18 +5,27 @@ interface Props {
   children: ReactNode;
   className?: string;
   to: string;
+  spy?: boolean;
+  onClick?: () => void;
 }
 
-const SmoothLink = ({ children, className, to }: Props) => {
+const SmoothLink = ({
+  children,
+  className,
+  to,
+  spy = true,
+  onClick,
+}: Props) => {
   return (
     <Link
       to={to}
-      spy={true}
+      spy={spy}
       smooth={true}
-      offset={-80}
+      offset={-96}
       duration={500}
+      onClick={onClick}
       activeClass="text-primary"
-      className={`${className} cursor-pointer hover:underline underline-offset-2`}
+      className={`${className} cursor-pointer underline-offset-2`}
     >
       {children}
     </Link>

@@ -7,13 +7,13 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex flex-col items-center justify-center 
-      min-h-screen bg-linear-to-b from-muted to-background
+      className="flex flex-col items-center justify-center 
+      min-h-[calc(100vh-96px)] bg-linear-to-b from-muted to-background
       text-center px-6"
     >
       {/* Content */}
       <motion.div
-        initial={{ opacity: 0, y: 40 }}
+        initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="relative z-10 max-w-3xl"
