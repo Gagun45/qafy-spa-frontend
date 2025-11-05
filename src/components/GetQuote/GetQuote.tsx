@@ -19,7 +19,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-20 px-6 bg-muted">
+    <section id="contact" className="bg-linear-to-b from-background to-muted">
       {/* Glow background */}
 
       <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-12 z-10">
@@ -31,8 +31,8 @@ export default function Contact() {
           viewport={{ once: true }}
           className="flex flex-col justify-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get a Free Quote</h2>
-          <p className="text-muted-foreground mb-6">
+          <h2>Get a Free Quote</h2>
+          <p className="sectionSubtitle">
             Need a repair or want to know the price? Fill out the form and we’ll get back to you shortly.
           </p>
 
@@ -56,7 +56,7 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
           onSubmit={handleSubmit}
-          className="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-lg flex flex-col"
+          className="bg-muted backdrop-blur-md p-8 rounded-2xl shadow-lg flex flex-col"
         >
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm mb-1 font-medium">

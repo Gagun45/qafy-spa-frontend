@@ -21,9 +21,19 @@ const SmoothLink = ({
       to={to}
       spy={spy}
       smooth={true}
+      spyThrottle={2500}
       offset={-96}
       duration={500}
       onClick={onClick}
+      tabIndex={0}
+      role="link"
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          e.preventDefault(); // prevent page scroll for Space
+          onClick?.(); // just close menu
+          e.currentTarget.click(); // trigger react-scroll navigation
+        }
+      }}
       activeClass="text-primary"
       className={`${className} cursor-pointer underline-offset-2`}
     >

@@ -5,7 +5,7 @@ import SmoothLink from "../SmoothLink/SmoothLink";
 
 export default function Footer() {
   return (
-    <footer className="py-12 px-6 bg-accent">
+    <footer className="py-12 px-6 bg-background">
       <div className="z-10 max-w-6xl mx-auto grid md:grid-cols-3 gap-10 text-center md:text-left">
         {/* Column 1: Brand */}
         <div>
