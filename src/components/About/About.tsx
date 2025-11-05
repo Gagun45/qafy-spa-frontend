@@ -17,9 +17,9 @@ export default function About() {
         >
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <img
-              src="/about-us.jpg"
+              src="/pngegg.png"
               alt="Our repair team at work"
-              className="object-cover w-full h-[380px]"
+              className="object-contain w-full h-[380px]"
             />
           </div>
         </motion.div>

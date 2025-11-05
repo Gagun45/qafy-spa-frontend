@@ -1,5 +1,7 @@
 // import { motion } from "framer-motion";
+import { LINKS } from "@/lib/constants";
 import { Facebook, Instagram, Phone, Mail } from "lucide-react";
+import SmoothLink from "../SmoothLink/SmoothLink";
 
 export default function Footer() {
   return (
@@ -9,8 +11,8 @@ export default function Footer() {
         <div>
           <h3 className="text-2xl font-bold mb-3">Qafy Mobile</h3>
           <p className="text-muted-foreground">
-            Fast and reliable repair service for phones, PCs, and laptops.  
-            Your tech, restored to life ⚡
+            Fast and reliable repair service for phones, PCs, and laptops. Your
+            tech, restored to life ⚡
           </p>
         </div>
 
@@ -18,20 +20,11 @@ export default function Footer() {
         <div>
           <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
           <ul className="space-y-2">
-            {[
-              { href: "#home", label: "Home" },
-              { href: "#services", label: "Services" },
-              { href: "#about", label: "About" },
-              { href: "#pricing", label: "Pricing" },
-              { href: "#contact", label: "Contact" },
-            ].map((link) => (
+            {LINKS.map((link) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-muted-foreground hover:text-primary transition-colors"
-                >
+                <SmoothLink className="text-muted-foreground underline" spy={false} to={link.href}>
                   {link.label}
-                </a>
+                </SmoothLink>
               </li>
             ))}
           </ul>

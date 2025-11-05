@@ -5,15 +5,7 @@ import { scrollSpy } from "react-scroll";
 import ThemeToggle from "../Theme/ThemeToggle";
 import SmoothLink from "../SmoothLink/SmoothLink";
 import { buttonVariants } from "../ui/button";
-
-const navLinks = [
-  { href: "home", label: "Home" },
-  { href: "services", label: "Services" },
-  { href: "why", label: "Why Us" },
-  { href: "about", label: "About" },
-  { href: "pricing", label: "Pricing" },
-  { href: "contact", label: "Contact" },
-];
+import { LINKS } from "@/lib/constants";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -49,7 +41,7 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex space-x-8">
-          {navLinks.map((link) => (
+          {LINKS.map((link) => (
             <SmoothLink to={link.href} key={link.href}>
               {link.label}
             </SmoothLink>
@@ -85,7 +77,7 @@ export default function Navbar() {
             className="lg:hidden bg-muted border-t border-b border-foreground backdrop-blur-md px-6 pb-6 absolute top-24 w-full -z-10!"
           >
             <ul className="flex flex-col space-y-4 tracking-wider mt-4 items-center">
-              {navLinks.map((link) => (
+              {LINKS.map((link) => (
                 <li key={link.href}>
                   <SmoothLink
                     onClick={() => setMenuOpen(false)}
