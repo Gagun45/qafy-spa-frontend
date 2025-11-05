@@ -17,10 +17,10 @@ const FeatureCard = ({ index, feature }: Props) => {
       viewport={{ once: true }}
       className="bg-muted rounded-2xl p-8 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all ring ring-muted-foreground/25"
     >
-      <div className="flex flex-col items-center text-foreground text-center">
+      <div className="flex flex-col h-full items-center text-foreground text-center">
         {icon}
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-sm">{desc}</p>
+        <p className="text-sm mt-auto">{desc}</p>
       </div>
     </motion.div>
   );

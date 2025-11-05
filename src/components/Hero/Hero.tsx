@@ -8,7 +8,7 @@ const Hero = () => {
       id="home"
       className="flex flex-col items-center justify-center 
       min-h-[calc(100vh-96px)] bg-linear-to-b from-muted to-background
-      text-center px-6"
+      text-center"
     >
       {/* Content */}
       <motion.div

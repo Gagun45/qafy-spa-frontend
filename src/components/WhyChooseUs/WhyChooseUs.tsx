@@ -3,7 +3,7 @@ import FeaturesGrid from "./FeaturesGrid/FeaturesGrid";
 
 export default function WhyChooseUs() {
   return (
-    <section id="why" className="relative py-20 px-6">
+    <section id="why">
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         {/* Title */}
         <motion.h2

@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import { buttonVariants } from "../ui/button";
+import SmoothLink from "../SmoothLink/SmoothLink";
 
 export default function About() {
   return (
-    <section id="about" className="relative py-20 px-6">
+    <section id="about">
       {/* Subtle background gradient */}
 
       <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
@@ -32,29 +33,27 @@ export default function About() {
           viewport={{ once: true }}
           className="w-full md:w-1/2"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2>
             About <span className="text-primary">Qafy Mobile</span>
           </h2>
-          <p className="text-muted-foreground mb-6 leading-relaxed">
+          <p className="mb-6 leading-relaxed tracking-wide text-justify">
             At Qafy Mobile, we’re passionate about bringing your devices back to
             life. Since our start in <strong>2018</strong>, we’ve repaired
             thousands of smartphones, tablets, and computers — always focusing
             on quality, transparency, and customer satisfaction.
           </p>
-          <p className="text-muted-foreground mb-8 leading-relaxed">
+          <p className="mb-8 leading-relaxed tracking-wide text-justify">
             Our team of certified technicians combines years of hands-on
             experience with the latest diagnostic tools to ensure every repair
             meets the highest standards. Whether it’s a simple battery swap or a
             complex motherboard issue, we’ve got you covered.
           </p>
-          <motion.a
-            href="#contact"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-            className={`${buttonVariants()} w-full`}
+          <SmoothLink
+            to="contact"
+            className={buttonVariants({ className: "w-full text-lg! font-bold! tracking-widest" })}
           >
             Contact Us
-          </motion.a>
+          </SmoothLink>
         </motion.div>
       </div>
 
