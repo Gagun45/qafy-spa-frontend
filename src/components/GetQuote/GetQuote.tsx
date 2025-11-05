@@ -19,7 +19,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-20 px-6 bg-gray-900 text-white">
+    <section id="contact" className="relative py-20 px-6 bg-gray-900 text-white overflow-hidden">
       {/* Glow background */}
       <div className="absolute inset-0 bg-[url('/contact-bg.jpg')] bg-cover bg-center opacity-10" />
       <div className="absolute inset-0 bg-black/70" />

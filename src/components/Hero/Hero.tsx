@@ -1,11 +1,8 @@
 import { motion } from "framer-motion";
 import { FaTools } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 const Hero = () => {
-  const onClick = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
   return (
     <section
       id="home"
@@ -53,19 +50,16 @@ const Hero = () => {
             Check Repair Status
           </button>
 
-          <button
-            onClick={() => onClick("why")}
+          <Link
+            to="contact"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={500}
             className="border border-gray-400 hover:border-blue-400 hover:text-blue-400 transition-colors px-8 py-3 rounded-xl font-semibold"
           >
             Get a Free Quote
-          </button>
-
-          <button
-            onClick={() => onClick("services")}
-            className="border border-gray-400 hover:border-blue-400 hover:text-blue-400 transition-colors px-8 py-3 rounded-xl font-semibold"
-          >
-            Services
-          </button>
+          </Link>
         </motion.div>
       </motion.div>
 

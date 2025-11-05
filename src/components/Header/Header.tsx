@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link, scrollSpy } from "react-scroll";
 
 const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#services", label: "Services" },
-  { href: "#why", label: "Why Us" },
-  { href: "#about", label: "About" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#contact", label: "Contact" },
+  { href: "home", label: "Home" },
+  { href: "services", label: "Services" },
+  { href: "why", label: "Why Us" },
+  { href: "about", label: "About" },
+  { href: "pricing", label: "Pricing" },
+  { href: "contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -17,6 +18,7 @@ export default function Navbar() {
 
   // add shadow when scrolling
   useEffect(() => {
+    scrollSpy.update();
     const onScroll = () => {
       setScrolled(window.scrollY > 20);
     };
@@ -30,7 +32,9 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 w-full z-50 transition-all ${
-        scrolled ? "bg-gray-900/90 backdrop-blur-md shadow-md" : "bg-transparent"
+        scrolled
+          ? "bg-gray-900/90 backdrop-blur-md shadow-md"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
@@ -42,13 +46,18 @@ export default function Navbar() {
         {/* Desktop nav */}
         <nav className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
-              className="text-gray-300 hover:text-blue-400 transition-colors font-medium"
+              to={link.href}
+              spy={true}
+              smooth={true}
+              offset={-80} // adjust for sticky navbar
+              duration={500}
+              activeClass="active-link"
+              className="relative text-gray-300 font-medium transition-all hover:text-blue-400 px-2 py-1"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
