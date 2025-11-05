@@ -16,3 +16,13 @@ export interface Feature {
   title: string;
   desc: string;
 }
+
+export interface PricingPlan {
+  title: string;
+  Icon: JSX.Element;
+  price: string;
+  features: string[];
+  bgColor: string;
+  ringColor: string;
+  textColor: string;
+}

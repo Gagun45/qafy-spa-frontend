@@ -170,7 +170,7 @@
   }
 
   body {
-    @apply bg-muted text-foreground transition-colors duration-300;
+    @apply bg-muted text-foreground;
   }
 
   section {
@@ -190,7 +190,7 @@
   }
 
   .sectionSubtitle {
-    @apply max-w-2xl mx-auto mb-12
+    @apply max-w-3xl mx-auto mb-12
   }
 
 }
