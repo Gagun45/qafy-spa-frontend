@@ -4,28 +4,31 @@ import { AnimatePresence, motion } from "framer-motion";
 
 interface Props {
   closeMenu: () => void;
+  menuOpen: boolean;
 }
 
-const MobileNav = ({ closeMenu }: Props) => {
+const MobileNav = ({ closeMenu, menuOpen }: Props) => {
   return (
     <AnimatePresence>
-      <motion.nav
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.15 }}
-        className="lg:hidden bg-muted border-t border-b border-foreground backdrop-blur-md px-6 absolute top-24 w-full -z-10!"
-      >
-        <ul className="flex flex-col space-y-4 tracking-wider py-4 items-center">
-          {LINKS.map((link) => (
-            <li key={link.href}>
-              <SmoothLink onClick={closeMenu} spy={false} to={link.href}>
-                {link.label}
-              </SmoothLink>
-            </li>
-          ))}
-        </ul>
-      </motion.nav>
+      {menuOpen && (
+        <motion.nav
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.15 }}
+          className="lg:hidden bg-muted border-b border-foreground backdrop-blur-md px-6 absolute top-24 w-full -z-10!"
+        >
+          <ul className="flex flex-col space-y-4 tracking-wider py-4 items-center">
+            {LINKS.map((link) => (
+              <li key={link.href}>
+                <SmoothLink onClick={closeMenu} spy={false} to={link.href}>
+                  {link.label}
+                </SmoothLink>
+              </li>
+            ))}
+          </ul>
+        </motion.nav>
+      )}
     </AnimatePresence>
   );
 };
