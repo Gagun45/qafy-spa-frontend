@@ -6,13 +6,10 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex flex-col items-center justify-center min-h-screen text-center bg-linear-to-b from-gray-900 to-gray-800 text-white px-6 overflow-hidden"
+      className="relative flex flex-col items-center justify-center 
+      min-h-screen bg-linear-to-b from-primary to-background
+      text-center px-6"
     >
-      {/* Background accent */}
-      <div className="absolute inset-0 opacity-20 bg-[url('/repair-bg.jpg')] bg-cover bg-center" />
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
 
       {/* Content */}
       <motion.div
@@ -27,12 +24,12 @@ const Hero = () => {
           transition={{ delay: 0.3, duration: 0.6 }}
           className="flex justify-center mb-6"
         >
-          <FaTools className="text-5xl text-blue-400" />
+          <FaTools className="text-5xl text-primary" />
         </motion.div>
 
         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-4">
           Fast & Reliable <br />
-          <span className="text-blue-400">PC & Phone Repair</span>
+          <span className="text-primary">PC & Phone Repair</span>
         </h1>
 
         <p className="text-gray-300 text-lg md:text-xl mb-8">

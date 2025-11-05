@@ -28,14 +28,14 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative bg-gray-50 py-20 px-6 text-center overflow-hidden"
+      className="relative py-20 px-6 text-center"
     >
       {/* Background accent */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.2 }}
         transition={{ duration: 1 }}
-        className="absolute inset-0 bg-linear-to-b from-blue-50 to-gray-50"
+        className="absolute inset-0"
       />
 
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -45,9 +45,9 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold mb-6 text-gray-900"
+          className="text-3xl md:text-4xl font-bold mb-6"
         >
-          Our <span className="text-blue-500">Repair Services</span>
+          Our <span className="text-primary">Repair Services</span>
         </motion.h2>
 
         <motion.p
@@ -55,7 +55,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-gray-600 max-w-2xl mx-auto mb-12"
+          className="text-muted-foreground max-w-2xl mx-auto mb-12"
         >
           Whether it's a cracked screen, slow laptop, or battery issue — we’ll
           bring your device back to life quickly and professionally.

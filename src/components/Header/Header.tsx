@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, scrollSpy } from "react-scroll";
+import ThemeToggle from "../Theme/ThemeToggle";
 
 const navLinks = [
   { href: "home", label: "Home" },
@@ -37,6 +38,7 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
+      <ThemeToggle />
       <div className="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
         {/* Logo / Brand */}
         <a href="#home" className="text-white font-bold text-2xl">
@@ -54,7 +56,7 @@ export default function Navbar() {
               offset={-80} // adjust for sticky navbar
               duration={500}
               activeClass="active-link"
-              className="relative text-gray-300 font-medium transition-all hover:text-blue-400 px-2 py-1"
+              className="font-medium transition-all cursor-pointer hover:underline underline-offset-2 px-2 py-1"
             >
               {link.label}
             </Link>
