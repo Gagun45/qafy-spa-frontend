@@ -1,5 +1,4 @@
 import SmoothLink from "@/components/SmoothLink/SmoothLink";
-import { buttonVariants } from "@/components/ui/button";
 import { LINKS } from "@/lib/constants";
 import { AnimatePresence, motion } from "framer-motion";
 
