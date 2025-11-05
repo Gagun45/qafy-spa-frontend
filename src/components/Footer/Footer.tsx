@@ -3,21 +3,21 @@ import { Facebook, Instagram, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gray-950 text-gray-300 py-12 px-6 overflow-hidden">
+    <footer className="relative py-12 px-6">
       {/* background glow */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.15 }}
         transition={{ duration: 1 }}
         viewport={{ once: true }}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-500 rounded-full blur-3xl"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 aspect-square h-full bg-primary rounded-full blur-3xl"
       />
 
       <div className="relative z-10 max-w-6xl mx-auto grid md:grid-cols-3 gap-10 text-center md:text-left">
         {/* Column 1: Brand */}
         <div>
-          <h3 className="text-2xl font-bold text-white mb-3">Qafy Mobile</h3>
-          <p className="text-gray-400">
+          <h3 className="text-2xl font-bold mb-3">Qafy Mobile</h3>
+          <p className="text-muted-foreground">
             Fast and reliable repair service for phones, PCs, and laptops.  
             Your tech, restored to life ⚡
           </p>
@@ -25,7 +25,7 @@ export default function Footer() {
 
         {/* Column 2: Quick Links */}
         <div>
-          <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
+          <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
           <ul className="space-y-2">
             {[
               { href: "#home", label: "Home" },
@@ -37,7 +37,7 @@ export default function Footer() {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="hover:text-blue-400 transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   {link.label}
                 </a>
@@ -48,14 +48,14 @@ export default function Footer() {
 
         {/* Column 3: Contact / Social */}
         <div>
-          <h4 className="text-lg font-semibold text-white mb-4">Get in Touch</h4>
+          <h4 className="text-lg font-semibold mb-4">Get in Touch</h4>
           <ul className="space-y-3">
             <li className="flex items-center justify-center md:justify-start gap-2">
-              <Phone size={18} className="text-blue-400" />
+              <Phone size={18} className="text-primary" />
               +380 (00) 123 4567
             </li>
             <li className="flex items-center justify-center md:justify-start gap-2">
-              <Mail size={18} className="text-blue-400" />
+              <Mail size={18} className="text-primary" />
               support@qafymobile.com
             </li>
           </ul>

@@ -19,10 +19,8 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-20 px-6 bg-gray-900 text-white overflow-hidden">
+    <section id="contact" className="relative py-20 px-6 bg-linear-to-b from-muted to-background">
       {/* Glow background */}
-      <div className="absolute inset-0 bg-[url('/contact-bg.jpg')] bg-cover bg-center opacity-10" />
-      <div className="absolute inset-0 bg-black/70" />
 
       <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-12 z-10">
         {/* Text section */}
@@ -34,19 +32,19 @@ export default function Contact() {
           className="flex flex-col justify-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get a Free Quote</h2>
-          <p className="text-gray-300 mb-6">
+          <p className="text-muted-foreground mb-6">
             Need a repair or want to know the price? Fill out the form and we’ll get back to you shortly.
           </p>
 
-          <ul className="space-y-4 text-gray-300">
+          <ul className="space-y-4 text-muted-foreground">
             <li className="flex items-center gap-3">
-              <Phone className="text-blue-400" /> +380 (00) 123 4567
+              <Phone className="text-primary" /> +380 (00) 123 4567
             </li>
             <li className="flex items-center gap-3">
-              <Mail className="text-blue-400" /> support@qafymobile.com
+              <Mail className="text-primary" /> support@qafymobile.com
             </li>
             <li className="flex items-center gap-3">
-              <MapPin className="text-blue-400" /> 123 Main St, Kyiv, Ukraine
+              <MapPin className="text-primary" /> 123 Main St, Kyiv, Ukraine
             </li>
           </ul>
         </motion.div>

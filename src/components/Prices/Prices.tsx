@@ -74,7 +74,7 @@ export default function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: i * 0.2 }}
             viewport={{ once: true }}
-            className={`border bg-accent rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
+            className={`border bg-transparent rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}
           >
             <div className="flex flex-col items-center mb-6">
               <plan.icon className={`w-12 h-12 text-${plan.accent}-500 mb-4`} />
