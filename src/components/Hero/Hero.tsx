@@ -61,18 +61,18 @@ const Hero = () => {
       </motion.div>
 
       {/* Decorative shapes */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 0.25, scale: 1 }}
         transition={{ duration: 1.2, delay: 0.8 }}
-        className="absolute bottom-10 right-10 w-32 h-32 bg-blue-500 rounded-full blur-3xl"
+        className="absolute bottom-10 right-10 w-32 h-32 bg-primary rounded-full blur-3xl z-5"
       />
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 0.25, scale: 1 }}
         transition={{ duration: 1.2, delay: 1 }}
         className="absolute top-10 left-10 w-40 h-40 bg-cyan-500 rounded-full blur-3xl"
-      />
+      /> */}
     </section>
   );
 };

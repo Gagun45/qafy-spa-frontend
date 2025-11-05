@@ -43,7 +43,7 @@ const pricingPlans = [
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="py-20 px-6 bg-linear-to-b from-background to-muted">
+    <section id="pricing" className="py-20 px-6 bg-linear-to-b from-background to-muted relative">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -106,7 +106,7 @@ export default function Pricing() {
       </div>
 
       {/* Background accent blobs */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.15 }}
         transition={{ duration: 1 }}
@@ -119,7 +119,7 @@ export default function Pricing() {
         transition={{ duration: 1, delay: 0.3 }}
         viewport={{ once: true }}
         className="absolute bottom-10 right-10 w-64 h-64 bg-cyan-300 rounded-full blur-3xl"
-      />
+      /> */}
     </section>
   );
 }

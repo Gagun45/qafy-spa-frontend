@@ -85,12 +85,12 @@ export default function Services() {
       </div>
 
       {/* Decorative gradient shapes */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 0.3, scale: 1 }}
         transition={{ duration: 1.2 }}
         viewport={{ once: true }}
-        className="absolute -top-10 -left-10 w-40 h-40 bg-primary rounded-full blur-3xl"
+        className="absolute -top-10 -left-10 w-40 h-40 bg-muted-foreground rounded-full blur-3xl"
       />
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
@@ -98,7 +98,7 @@ export default function Services() {
         transition={{ duration: 1.2, delay: 0.3 }}
         viewport={{ once: true }}
         className="absolute bottom-0 z-5 right-0 w-56 h-56 bg-primary-foreground rounded-full blur-3xl"
-      />
+      /> */}
     </section>
   );
 }

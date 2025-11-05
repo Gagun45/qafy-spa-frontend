@@ -24,7 +24,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 px-6 bg-linear-to-b from-muted to-background">
+    <section id="testimonials" className="py-20 px-6 bg-linear-to-b from-muted to-background relative">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ export default function Testimonials() {
       </div>
 
       {/* Decorative gradient shapes */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 0.2 }}
         transition={{ duration: 1 }}
@@ -91,7 +91,7 @@ export default function Testimonials() {
         transition={{ duration: 1, delay: 0.3 }}
         viewport={{ once: true }}
         className="absolute bottom-10 right-10 w-56 h-56 bg-cyan-300 rounded-full blur-3xl"
-      />
+      /> */}
     </section>
   );
 }

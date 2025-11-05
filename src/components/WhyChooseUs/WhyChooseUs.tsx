@@ -83,7 +83,7 @@ export default function WhyChooseUs() {
       </div>
 
       {/* Decorative blur shapes */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 0.25, scale: 1 }}
         transition={{ duration: 1.2 }}
@@ -96,7 +96,7 @@ export default function WhyChooseUs() {
         transition={{ duration: 1.2, delay: 0.3 }}
         viewport={{ once: true }}
         className="absolute top-10 left-10 w-56 h-56 bg-cyan-300 rounded-full blur-3xl"
-      />
+      /> */}
     </section>
   );
 }
