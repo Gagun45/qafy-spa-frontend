@@ -24,7 +24,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 px-6 bg-gray-50 text-gray-900">
+    <section id="testimonials" className="py-20 px-6">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-gray-600 max-w-2xl mx-auto"
+          className="text-muted-foreground max-w-2xl mx-auto"
         >
           Real feedback from people who trusted us with their devices.
         </motion.p>
@@ -55,7 +55,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: i * 0.2 }}
             viewport={{ once: true }}
-            className="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow"
+            className="bg-accent rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow"
           >
             <div className="flex items-center gap-4 mb-4">
               <img
@@ -64,7 +64,7 @@ export default function Testimonials() {
                 className="w-14 h-14 rounded-full object-cover"
               />
               <div className="text-left">
-                <p className="font-semibold">{t.name}</p>
+                <p className="font-semibold text-accent-foreground">{t.name}</p>
                 <div className="flex">
                   {[...Array(t.rating)].map((_, idx) => (
                     <Star key={idx} size={16} className="fill-yellow-400 text-yellow-400" />
@@ -72,7 +72,7 @@ export default function Testimonials() {
                 </div>
               </div>
             </div>
-            <p className="text-gray-700 text-left leading-relaxed">{t.text}</p>
+            <p className="text-foreground text-left leading-relaxed">{t.text}</p>
           </motion.div>
         ))}
       </div>

@@ -35,7 +35,7 @@ export default function WhyChooseUs() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}
         transition={{ duration: 1 }}
-        className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.1)_0%,transparent_70%)]"
+        className="absolute inset-0"
       />
 
       <div className="relative z-10 max-w-6xl mx-auto text-center">
