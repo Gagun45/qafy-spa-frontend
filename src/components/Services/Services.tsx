@@ -3,22 +3,22 @@ import { FaMobileAlt, FaLaptop, FaBatteryHalf, FaDatabase } from "react-icons/fa
 
 const services = [
   {
-    icon: <FaMobileAlt className="text-4xl text-blue-400 mb-4" />,
+    icon: <FaMobileAlt className="text-4xl text-primary mb-4" />,
     title: "Smartphone Repair",
     desc: "Screens, cameras, charging ports, and more. We fix all major brands.",
   },
   {
-    icon: <FaLaptop className="text-4xl text-blue-400 mb-4" />,
+    icon: <FaLaptop className="text-4xl text-primary mb-4" />,
     title: "Laptop & PC Repair",
     desc: "Hardware and software diagnostics, upgrades, and cleaning.",
   },
   {
-    icon: <FaBatteryHalf className="text-4xl text-blue-400 mb-4" />,
+    icon: <FaBatteryHalf className="text-4xl text-primary mb-4" />,
     title: "Battery Replacement",
     desc: "Fast and reliable replacements with high-quality batteries.",
   },
   {
-    icon: <FaDatabase className="text-4xl text-blue-400 mb-4" />,
+    icon: <FaDatabase className="text-4xl text-primary mb-4" />,
     title: "Data Recovery",
     desc: "Recover your lost data safely and securely from any device.",
   },
@@ -70,14 +70,14 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all border border-gray-100"
+              className="bg-muted rounded-2xl p-8 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all border border-accent"
             >
               <div className="flex flex-col items-center">
                 {service.icon}
-                <h3 className="text-xl font-semibold mb-2 text-gray-800">
+                <h3 className="text-xl font-semibold mb-2">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 text-sm">{service.desc}</p>
+                <p className="text-muted-foreground text-sm">{service.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -90,14 +90,14 @@ export default function Services() {
         whileInView={{ opacity: 0.3, scale: 1 }}
         transition={{ duration: 1.2 }}
         viewport={{ once: true }}
-        className="absolute -top-10 -left-10 w-40 h-40 bg-blue-300 rounded-full blur-3xl"
+        className="absolute -top-10 -left-10 w-40 h-40 bg-primary rounded-full blur-3xl"
       />
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 0.3, scale: 1 }}
         transition={{ duration: 1.2, delay: 0.3 }}
         viewport={{ once: true }}
-        className="absolute bottom-0 right-0 w-56 h-56 bg-cyan-300 rounded-full blur-3xl"
+        className="absolute bottom-0 right-0 w-56 h-56 bg-primary-foreground rounded-full blur-3xl"
       />
     </section>
   );

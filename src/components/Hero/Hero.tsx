@@ -8,7 +8,7 @@ const Hero = () => {
     <section
       id="home"
       className="relative flex flex-col items-center justify-center 
-      min-h-screen bg-linear-to-b from-primary to-background
+      min-h-screen bg-linear-to-b from-muted to-background
       text-center px-6"
     >
       {/* Content */}
@@ -43,7 +43,7 @@ const Hero = () => {
           transition={{ delay: 0.5 }}
           className="flex flex-col sm:flex-row gap-4 items-center justify-center"
         >
-          <Button className="bg-accent hover:bg-accent/95 transition-colors rounded-xl font-semibold shadow-primary/30 w-full sm:max-w-64">
+          <Button className="bg-primary hover:bg-primary/95 transition-colors rounded-xl font-semibold shadow-primary/30 w-full sm:max-w-64">
             Check Repair Status
           </Button>
 
@@ -53,7 +53,7 @@ const Hero = () => {
             smooth={true}
             offset={50}
             duration={500}
-            className={`${buttonVariants()} bg-primary! hover:bg-primary/95! transition-colors rounded-xl font-semibold w-full sm:max-w-64`}
+            className={`${buttonVariants()} bg-foreground! text-background! transition-colors rounded-xl font-semibold w-full sm:max-w-64`}
           >
             Get a Free Quote
           </Link>

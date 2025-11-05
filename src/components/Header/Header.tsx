@@ -34,7 +34,7 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 w-full z-50 transition-all ${
         scrolled
-          ? "bg-primary backdrop-blur-md shadow-md"
+          ? "bg-accent backdrop-blur-md shadow-md"
           : "bg-transparent"
       }`}
     >
@@ -66,7 +66,7 @@ export default function Navbar() {
         {/* CTA button (right corner) */}
         <a
           href="#contact"
-          className="hidden md:inline-block bg-accent text-white font-semibold px-5 py-2 rounded-xl transition-colors"
+          className="hidden md:inline-block bg-foreground text-background font-semibold px-5 py-2 rounded-xl transition-colors"
         >
           Get Quote
         </a>
