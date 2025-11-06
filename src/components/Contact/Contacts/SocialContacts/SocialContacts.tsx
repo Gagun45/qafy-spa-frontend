@@ -3,7 +3,7 @@ import ContactCard from "../ContactCard/ContactCard";
 
 const SocialContacts = () => {
   return (
-    <ul className="flex items-end gap-6 flex-wrap">
+    <ul className="flex gap-6 flex-wrap flex-col md:flex-row">
       {SOCIALS_LINKS.map((contact) => {
         const iconColor = `text-${contact.label.toLowerCase()}`;
         return (
