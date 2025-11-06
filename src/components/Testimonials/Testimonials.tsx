@@ -25,9 +25,9 @@ export default function Testimonials() {
     fetchData();
   }, []);
 
+  if (reviews.length === 0) return null;
   if (loading) return <p>Loading reviews...</p>;
   if (error) return <p>Error: {error}</p>;
-  console.log(reviews);
   return (
     <section id="testimonials" className="py-20 px-6 relative">
       <div className="max-w-6xl mx-auto text-center mb-12 space-y-6">

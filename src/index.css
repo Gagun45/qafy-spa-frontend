@@ -145,6 +145,10 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
+  --color-telegram: #0088cc;
+  --color-instagram: #E4405F;
+  --color-whatsapp: #25D366;
+
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);

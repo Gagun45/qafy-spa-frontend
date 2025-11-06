@@ -1,6 +1,6 @@
 import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
-import Contact from "./components/GetQuote/GetQuote";
+import Contact from "./components/Contact/Contact";
 import Navbar from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Pricing from "./components/Prices/Prices";

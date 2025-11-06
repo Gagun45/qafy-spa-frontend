@@ -1,12 +1,14 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
+import ContactsContainer from "./Contacts/Contacts";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -33,20 +35,11 @@ export default function Contact() {
         >
           <h2>Get a Free Quote</h2>
           <p className="sectionSubtitle">
-            Need a repair or want to know the price? Fill out the form and we’ll get back to you shortly.
+            Need a repair or want to know the price? Fill out the form and we’ll
+            get back to you shortly.
           </p>
 
-          <ul className="space-y-4 text-muted-foreground">
-            <li className="flex items-center gap-3">
-              <Phone className="text-primary" /> +380 (00) 123 4567
-            </li>
-            <li className="flex items-center gap-3">
-              <Mail className="text-primary" /> support@qafymobile.com
-            </li>
-            <li className="flex items-center gap-3">
-              <MapPin className="text-primary" /> 123 Main St, Kyiv, Ukraine
-            </li>
-          </ul>
+          <ContactsContainer />
         </motion.div>
 
         {/* Form */}

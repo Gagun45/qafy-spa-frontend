@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+import type { IconType } from "react-icons";
 
 export interface LINK {
   href: string;
@@ -36,4 +37,10 @@ export interface Review {
     displayName: string;
     photoUri?: string;
   };
+}
+
+export interface Contact {
+  href: string;
+  icon: IconType;
+  label: string;
 }
