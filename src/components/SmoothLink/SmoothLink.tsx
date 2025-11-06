@@ -21,7 +21,6 @@ const SmoothLink = ({
       to={to}
       spy={spy}
       smooth={true}
-      spyThrottle={2500}
       offset={-96}
       duration={500}
       onClick={onClick}
