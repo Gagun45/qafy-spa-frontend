@@ -19,7 +19,7 @@ const TestimonialCard = ({ review, index }: Props) => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.1 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '50px' }}
       className="bg-accent h-fit rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow"
     >
       <div className="flex items-center justify-between flex-wrap mb-2">
