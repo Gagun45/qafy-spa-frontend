@@ -22,7 +22,7 @@ const TestimonialCard = ({ review, index }: Props) => {
       viewport={{ once: true }}
       className="bg-accent h-fit rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow"
     >
-      <div className="flex items-center justify-between mb-2">
+      <div className="flex items-center justify-between flex-wrap mb-2">
         <div className="flex items-center gap-2">
           {authorAttribution?.photoUri && (
             <img
