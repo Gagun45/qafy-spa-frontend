@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import TestimonialsGrid from "./TestimonialsGrid/TestimonialsGrid";
 import TestimonialsLinks from "./TestimonialsLinks/TestimonialsLinks";
 import TestimonialsHeading from "./TestimonialsHeading/TestimonialsHeading";
+import { BACKEND_BASE_URL } from "@/lib/constants";
+
 
 export default function Testimonials() {
   const [reviews, setReviews] = useState<Review[]>([]);
@@ -11,7 +13,7 @@ export default function Testimonials() {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:3000/api/reviews");
+      const res = await fetch(`${BACKEND_BASE_URL}/api/reviews`);
       if (!res.ok) throw new Error("Failed to fetch");
       const data = await res.json();
       setReviews(data);
@@ -24,7 +26,6 @@ export default function Testimonials() {
   useEffect(() => {
     fetchData();
   }, []);
-
   if (reviews.length === 0) return null;
   if (loading) return <p>Loading reviews...</p>;
   if (error) return <p>Error: {error}</p>;
