@@ -22,7 +22,7 @@ const GetInTouch = () => {
         ))}
       </ul>
 
-      <ul className="flex justify-center items-center gap-8 flex-wrap">
+      <ul className="flex justify-center items-center md:justify-start gap-8 flex-wrap">
         {SOCIALS_LINKS.map((contact) => {
           const iconColor = contact.label.toLowerCase();
           return (
