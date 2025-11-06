@@ -8,7 +8,7 @@ const TestimonialsLinks = () => {
         href={reviewLinkUrl}
         target="_blank"
         className={`${buttonVariants({
-          variant: "outline",
+          variant: "secondary",
         })} w-full! sm:max-w-48!`}
       >
         View all
@@ -17,7 +17,7 @@ const TestimonialsLinks = () => {
         href={reviewLinkUrl}
         target="_blank"
         className={`${buttonVariants({
-          variant: "secondary",
+          variant: "default",
         })} w-full! sm:max-w-48!`}
       >
         Leave a review

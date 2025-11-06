@@ -5,7 +5,6 @@ import SmoothLink from "../SmoothLink/SmoothLink";
 export default function About() {
   return (
     <section id="about">
-      {/* Subtle background gradient */}
 
       <div className="relative z-10 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
         {/* Image */}
@@ -50,28 +49,15 @@ export default function About() {
           </p>
           <SmoothLink
             to="contact"
-            className={buttonVariants({ className: "w-full text-lg! font-bold! tracking-widest" })}
+            className={buttonVariants({
+              className:
+                "w-full text-lg! font-bold! tracking-widest",
+            })}
           >
             Contact Us
           </SmoothLink>
         </motion.div>
       </div>
-
-      {/* Decorative glow shapes */}
-      {/* <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        whileInView={{ opacity: 0.25, scale: 1 }}
-        transition={{ duration: 1.2 }}
-        viewport={{ once: true }}
-        className="absolute bottom-10 right-10 w-48 h-48 bg-blue-300 rounded-full blur-3xl"
-      />
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        whileInView={{ opacity: 0.25, scale: 1 }}
-        transition={{ duration: 1.2, delay: 0.3 }}
-        viewport={{ once: true }}
-        className="absolute top-10 left-10 w-56 h-56 bg-cyan-300 rounded-full blur-3xl"
-      /> */}
     </section>
   );
 }

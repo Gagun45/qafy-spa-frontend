@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/button";
+import SmoothLink from "@/components/SmoothLink/SmoothLink";
+import { buttonVariants } from "@/components/ui/button";
 import type { PricingPlan } from "@/lib/types";
 import { motion } from "framer-motion";
 
@@ -37,9 +38,13 @@ const PlanCard = ({ index, plan }: Props) => {
         ))}
         <li className="italic text-muted-foreground">And more...</li>
       </ul>
-      <Button className={`w-full ${bgColor} font-semibold mt-auto text-lg hover:${bgColor}`}>
+      <SmoothLink
+        spy={false}
+        to={"contact"}
+        className={`${buttonVariants({variant: null})} w-full ${bgColor} font-semibold mt-auto text-lg hover:${bgColor}`}
+      >
         Get Quote
-      </Button>
+      </SmoothLink>
     </motion.div>
   );
 };
