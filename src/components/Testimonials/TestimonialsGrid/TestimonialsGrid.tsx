@@ -7,7 +7,7 @@ interface Props {
 
 const TestimonialsGrid = ({ reviews }: Props) => {
   return (
-    <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+    <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
       {reviews.map((review, index) => (
         <TestimonialCard key={review.name} review={review} index={index}/>
       ))}

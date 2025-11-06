@@ -33,12 +33,12 @@ const TestimonialCard = ({ review, index }: Props) => {
               className="w-10 h-10 rounded-full"
             />
           )}
-          <strong>{authorAttribution.displayName}</strong>
+          <strong className="text-primary">{authorAttribution.displayName}</strong>
         </div>
         <span className="text-yellow-500">⭐ {rating}</span>
       </div>
 
-      {text && <p className="text-sm text-justify text-accent-foreground mb-1">{text}</p>}
+      {text && <p className="text-sm text-justify text-foreground mb-1">{text}</p>}
       <p className="text-xs text-muted-foreground">
         {relativePublishTimeDescription}
       </p>
