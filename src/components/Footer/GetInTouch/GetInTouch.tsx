@@ -1,4 +1,5 @@
-import { CONTACT_INFO, SOCIALS_LINKS } from "@/lib/constants";
+import { CONTACT_INFO } from "@/lib/constants";
+import { FaInstagram, FaTelegram, FaWhatsapp } from "react-icons/fa6";
 
 const GetInTouch = () => {
   return (
@@ -23,19 +24,21 @@ const GetInTouch = () => {
       </ul>
 
       <ul className="flex justify-center items-center md:justify-start gap-8 flex-wrap">
-        {SOCIALS_LINKS.map((contact) => {
-          const iconColor = contact.label.toLowerCase();
-          return (
-            <li
-              key={contact.label}
-              className={`cursor-pointer text-${iconColor}`}
-            >
-              <a href={contact.href} target="_blank">
-                <contact.icon className="size-8"/>
-              </a>
-            </li>
-          );
-        })}
+        <li className={`cursor-pointer text-telegram`}>
+          <a href={"tg://resolve?domain=Qafy_mobile"} target="_blank">
+            <FaTelegram className="size-8" />
+          </a>
+        </li>
+        <li className={`cursor-pointer text-instagram`}>
+          <a href={"https://www.instagram.com/qafy.mobile"} target="_blank">
+            <FaInstagram className="size-8" />
+          </a>
+        </li>
+        <li className={`cursor-pointer text-whatsapp`}>
+          <a href={"https://wa.me/+4915140164020"} target="_blank">
+            <FaWhatsapp className="size-8" />
+          </a>
+        </li>
       </ul>
     </div>
   );
