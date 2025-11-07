@@ -16,7 +16,7 @@ const GetInTouch = () => {
               target="_blank"
               className="flex items-center justify-center gap-2"
             >
-              <contact.icon className="text-primary" />
+              <contact.icon className="text-primary size-6" />
               <span>{contact.label}</span>
             </a>
           </li>
@@ -45,7 +45,7 @@ const GetInTouch = () => {
             className={`cursor-pointer text-${contact.label.toLowerCase()}`}
           >
             <a href={contact.href} target="_blank">
-              <contact.icon className="size-8" />
+              <contact.icon className="size-6" />
             </a>
           </li>
         ))}
