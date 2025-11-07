@@ -1,91 +1,65 @@
-import { motion } from "framer-motion";
+import { contactFormSchema, type ContactFormType } from "@/lib/zod-schemas";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Form } from "@/components/ui/form";
+import NameInput from "./NameInput/NameInput";
+import ContactInput from "./ContactInput/ContactInput";
+import MessageTextarea from "./MessageTextarea/MessageTextarea";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { BACKEND_BASE_URL } from "@/lib/constants";
 
 const ContactForm = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [files, setFiles] = useState<File[]>([]);
+  const form = useForm<ContactFormType>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      contact: "",
+      message: "",
+      name: "",
+    },
+  });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simulate submission (replace with email API / backend action)
-    console.log(form);
-    setSubmitted(true);
-    setForm({ name: "", email: "", message: "" });
+  const onSubmit = async (values: ContactFormType) => {
+    const formData = new FormData();
+    const { contact, message, name } = values;
+    formData.append("name", name);
+    formData.append("contact", contact);
+    formData.append("message", message);
+    files.forEach((file) => {
+      formData.append("files", file);
+    });
+    const res = await fetch(`${BACKEND_BASE_URL}/api/contact`, {
+      method: "POST",
+      body: formData,
+    });
+    const data = await res.json();
+    console.log(data);
   };
   return (
-    <motion.form
-      initial={{ opacity: 0, x: 40 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      viewport={{ once: true }}
-      onSubmit={handleSubmit}
-      className="bg-muted backdrop-blur-md p-8 rounded-2xl shadow-lg flex flex-col"
-    >
-      <div className="mb-4">
-        <label htmlFor="name" className="block text-sm mb-1 font-medium">
-          Name
-        </label>
-        <input
-          required
-          type="text"
-          id="name"
-          name="name"
-          value={form.name}
-          onChange={handleChange}
-          className="w-full px-4 py-2 rounded-lg bg-white/10 border border-gray-700 focus:outline-none focus:border-blue-400"
-        />
-      </div>
-
-      <div className="mb-4">
-        <label htmlFor="email" className="block text-sm mb-1 font-medium">
-          Email
-        </label>
-        <input
-          required
-          type="email"
-          id="email"
-          name="email"
-          value={form.email}
-          onChange={handleChange}
-          className="w-full px-4 py-2 rounded-lg bg-white/10 border border-gray-700 focus:outline-none focus:border-blue-400"
-        />
-      </div>
-
-      <div className="mb-6">
-        <label htmlFor="message" className="block text-sm mb-1 font-medium">
-          Message
-        </label>
-        <textarea
-          required
-          id="message"
-          name="message"
-          rows={4}
-          value={form.message}
-          onChange={handleChange}
-          className="w-full px-4 py-2 rounded-lg bg-white/10 border border-gray-700 focus:outline-none focus:border-blue-400"
-        />
-      </div>
-
-      <motion.button
-        type="submit"
-        whileTap={{ scale: 0.95 }}
-        className="bg-blue-500 hover:bg-blue-600 transition-colors text-white font-semibold py-3 rounded-xl shadow-md"
-      >
-        Send Message
-      </motion.button>
-
-      {submitted && (
-        <p className="mt-4 text-green-400 font-medium">
-          ✅ Message sent! We'll get back to you soon.
-        </p>
-      )}
-    </motion.form>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <span className="text-lg font-semibold">Contact Form</span>
+        <NameInput />
+        <ContactInput />
+        <MessageTextarea />
+        <Label className="flex flex-col gap-1 items-start">
+          <span>
+            Upload images <i>(optional, up to 5)</i>
+          </span>
+          <Input
+            type="file"
+            multiple
+            onChange={(e) => {
+              if (e.target.files) setFiles(Array.from(e.target.files));
+            }}
+          />
+        </Label>
+        <Button>Submit</Button>
+      </form>
+    </Form>
   );
 };
 export default ContactForm;
