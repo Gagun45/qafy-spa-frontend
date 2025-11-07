@@ -2,6 +2,7 @@ import SmoothLink from "@/components/SmoothLink/SmoothLink";
 import { buttonVariants } from "@/components/ui/button";
 import type { PricingPlan } from "@/lib/types";
 import { motion } from "framer-motion";
+import { CheckIcon } from "lucide-react";
 
 interface Props {
   plan: PricingPlan;
@@ -32,7 +33,7 @@ const PlanCard = ({ index, plan }: Props) => {
             key={idx}
             className="flex items-center gap-2 text-muted-foreground"
           >
-            <span className={textColor}>✔</span>
+            <CheckIcon className={textColor} />
             {feature}
           </li>
         ))}
@@ -41,7 +42,9 @@ const PlanCard = ({ index, plan }: Props) => {
       <SmoothLink
         spy={false}
         to={"contact"}
-        className={`${buttonVariants({variant: null})} w-full ${bgColor} font-semibold mt-auto text-lg hover:${bgColor}`}
+        className={`${buttonVariants({
+          variant: null,
+        })} w-full ${bgColor} font-semibold mt-auto text-lg hover:${bgColor}`}
       >
         Get Quote
       </SmoothLink>
