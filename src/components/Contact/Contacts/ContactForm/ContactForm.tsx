@@ -47,7 +47,7 @@ const ContactForm = () => {
       files.forEach((file) => {
         formData.append("files", file);
       });
-      const res = await fetch(`${BACKEND_BASE_URL}/api/contacts`, {
+      const res = await fetch(`${BACKEND_BASE_URL}/api/contact`, {
         method: "POST",
         body: formData,
       });
