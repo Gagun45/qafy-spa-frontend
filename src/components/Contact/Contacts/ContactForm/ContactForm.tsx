@@ -8,10 +8,14 @@ import MessageTextarea from "./MessageTextarea/MessageTextarea";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { BACKEND_BASE_URL } from "@/lib/constants";
 
 const ContactForm = () => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [files, setFiles] = useState<File[]>([]);
   const form = useForm<ContactFormType>({
     resolver: zodResolver(contactFormSchema),
@@ -22,42 +26,69 @@ const ContactForm = () => {
     },
   });
 
+  const formReset = () => {
+    form.reset();
+    setFiles([]);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
+
   const onSubmit = async (values: ContactFormType) => {
-    const formData = new FormData();
-    const { contact, message, name } = values;
-    formData.append("name", name);
-    formData.append("contact", contact);
-    formData.append("message", message);
-    files.forEach((file) => {
-      formData.append("files", file);
-    });
-    const res = await fetch(`${BACKEND_BASE_URL}/api/contact`, {
-      method: "POST",
-      body: formData,
-    });
-    const data = await res.json();
-    console.log(data);
+    setLoading(true);
+    setError(null);
+    setSuccess(null);
+    try {
+      const formData = new FormData();
+      const { contact, message, name } = values;
+      formData.append("name", name);
+      formData.append("contact", contact);
+      formData.append("message", message);
+      files.forEach((file) => {
+        formData.append("files", file);
+      });
+      const res = await fetch(`${BACKEND_BASE_URL}/api/contacts`, {
+        method: "POST",
+        body: formData,
+      });
+      if (!res.ok) {
+        throw new Error();
+      }
+      setSuccess("Request sent successfully!");
+      formReset();
+    } catch {
+      setError("Something went wrong");
+    } finally {
+      setLoading(false);
+    }
   };
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <span className="text-lg font-semibold">Contact Form</span>
-        <NameInput />
-        <ContactInput />
-        <MessageTextarea />
-        <Label className="flex flex-col gap-1 items-start">
-          <span>
-            Upload images <i>(optional, up to 5)</i>
-          </span>
-          <Input
-            type="file"
-            multiple
-            onChange={(e) => {
-              if (e.target.files) setFiles(Array.from(e.target.files));
-            }}
-          />
-        </Label>
-        <Button>Submit</Button>
+        <fieldset className="space-y-8" disabled={loading}>
+          <NameInput />
+          <ContactInput />
+          <MessageTextarea />
+          <Label className="flex flex-col gap-1 items-start">
+            <span>
+              Upload images <i>(optional, up to 5)</i>
+            </span>
+            <Input
+              ref={fileInputRef}
+              type="file"
+              multiple
+              onChange={(e) => {
+                if (e.target.files) setFiles(Array.from(e.target.files));
+              }}
+            />
+          </Label>
+          {error && <p className="text-destructive">{error}</p>}
+          {success && <p className="text-green-500">{success}</p>}
+          <Button className="w-full" type="submit">
+            {loading ? "Submitting..." : "Submit"}
+          </Button>
+        </fieldset>
       </form>
     </Form>
   );

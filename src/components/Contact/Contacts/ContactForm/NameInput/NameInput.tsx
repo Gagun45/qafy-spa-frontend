@@ -19,7 +19,7 @@ const NameInput = () => {
         <FormItem>
           <FormLabel>Name</FormLabel>
           <FormControl>
-            <Input placeholder="John Doe..." {...field} />
+            <Input placeholder="John Doe" {...field} />
           </FormControl>
           <FormMessage />
         </FormItem>

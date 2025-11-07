@@ -34,6 +34,7 @@ const SocialContacts = () => {
       </li> */}
       {SOCIALS_LINKS.map((contact) => (
         <ContactCard
+          key={contact.label}
           contact={contact}
           iconColor={`text-${contact.label.toLowerCase()}`}
         />
